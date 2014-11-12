@@ -34,6 +34,7 @@ Dummy::Application.configure do
 
   # Expands the lines which load the assets
   config.assets.debug = true
+  config.eager_load = false
 
   config.action_mailer.delivery_method = :mailgun
   config.action_mailer.mailgun_settings = {

@@ -40,10 +40,10 @@ module Mailgun
       rm = {:from => rails_message[:from].formatted, :to => rails_message[:to].formatted, :subject => rails_message.subject,
        :html => extract_html(rails_message), :text => extract_text(rails_message)}
       if rails_message[:cc]
-        rm.merge!({:cc => rails_message[:cc].try(:formatted)})
+        rm = rm.merge({:cc => rails_message[:cc].try(:formatted)})
       end
       if rails_message[:bcc]
-        rm.merge!({:bcc => rails_message[:bcc].try(:formatted)})
+        rm = rm.merge({:bcc => rails_message[:bcc].try(:formatted)})
       end
       rm
     end
